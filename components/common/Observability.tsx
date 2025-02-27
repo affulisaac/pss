@@ -8,16 +8,16 @@ export default function ObservabilityInit() {
   const { user } = useClientSession();
   useEffect(() => {
     if(process.env.NODE_ENV !== 'production') return
-    eventPublisher.initObservability();
+    // eventPublisher.initObservability();
   });
   useEffect(() => {
-    if (user) {
-      eventPublisher.setUser({
-        id: user.email,
-        email: user.email,
-        name: user.email,
-      });
-    }
+    // if (user) {
+    //   eventPublisher.setUser({
+    //     id: user.email,
+    //     email: user.email,
+    //     name: user.email,
+    //   });
+    // }
   }, [user]);
   return null;
 }
