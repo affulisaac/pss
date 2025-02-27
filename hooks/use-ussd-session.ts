@@ -30,11 +30,7 @@ export function useUSSDSession() {
         message ? message : userInput,
         type
       );
-      eventPublisher.logAnalyticsEvent({
-        actionName: "Service Request",
-        eventType: "Regular",
-        payload,
-      });
+
       const response = await makeUSSDRequest<Record<string, any>>(
         payload,
         formState.url,

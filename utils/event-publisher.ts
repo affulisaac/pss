@@ -4,5 +4,7 @@ import pkg from "@/package.json";
 const { version } = pkg || {};
 export const eventPublisher = () =>{
   
- 
+   const setUser = (data: any) => {
+
+   }
 };

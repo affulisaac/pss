@@ -22,15 +22,7 @@ export function USSDSimulator() {
   const { lastSubmitted } = useNPSStore();
 
   useEffect(() => {
-    eventPublisher.logAnalyticsEvent({
-      actionName: "Intialize USSD Simulator",
-      eventType: "Regular",
-      additionalProperties: {
-        platform: formState.platform,
-        operator: formState.operator,
-        device: formState.device,
-      },
-    });
+
     const timer = setTimeout(() => {
       if (shouldShowNPS(lastSubmitted)) {
         setShowNPS(true);

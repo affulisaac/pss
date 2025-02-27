@@ -38,11 +38,6 @@ export function LoginContent() {
       async (response: AuthResponse) => {
         try {
           await setSecureToken(response?.data?.token);
-          eventPublisher.setUser({
-            id: response?.data?.email,
-            email: response?.data?.email,
-            name: response?.data?.email,
-          })
           const redirectUrl = searchParams.get("callbackUrl");
           router.push(decodeURIComponent(redirectUrl || "/"));
           router.refresh()
