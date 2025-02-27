@@ -27,14 +27,7 @@ export const useNPSStore = create<NPSState>()(
       submitNPS: async () => {
         const { score, feedback } = get();
 
-        eventPublisher.logAnalyticsEvent({
-          actionName: "Submit Feedback",
-          eventType: "Regular",
-          additionalProperties: {
-            score,
-            feedback,
-          },
-        });
+
 
         // Store submission timestamp
         const timestamp = new Date().toISOString();

@@ -25,11 +25,7 @@ export function useClientSession() {
       setIsAuthenticated(data.authenticated);
      
       if (data.authenticated && data.user) {
-        eventPublisher.setUser({
-          id: data.user.email,
-          email: data.user.email,
-          name: data.user.email,
-        });
+
       }
     } catch (error) {
       console.error("Failed to check auth status:", error);
